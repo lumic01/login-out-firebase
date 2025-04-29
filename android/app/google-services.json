@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "706967235429",
+    "project_id": "lmcapq",
+    "storage_bucket": "lmcapq.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706967235429:android:1b01ea1dbeb70fa7540f8c",
+        "android_client_info": {
+          "package_name": "com.example.bike"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA777C35QI9bHD4v7giyXfjfoViRcU-vC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
