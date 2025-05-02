@@ -1,15 +1,15 @@
+import 'package:bike/services/auth/auth_service.dart';
 import 'package:bike/views/login_view.dart';
 import 'package:bike/views/register_view.dart';
 import 'package:bike/views/verify_email_view.dart';
 import 'package:bike/views/homepage.dart'; // Create this file for HomePage
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  // AuthService.firebase().initialize();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   Widget _getInitialPage() {
-    final user = FirebaseAuth.instance.currentUser;
+    final user = AuthService.firebase().currentUser;
 
     if (user == null) {
       return const LoginView(); // Not logged in
-    } else if (!user.emailVerified) {
+    } else if (!user.isEmailVerified) {
       return const VerifyEmailView(); // Logged in but email not verified
     } else {
       return NotesView(); // Logged in and verified
