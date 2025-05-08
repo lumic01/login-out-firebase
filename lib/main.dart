@@ -1,15 +1,17 @@
+import 'package:bike/firebase_options.dart';
 import 'package:bike/services/auth/auth_service.dart';
 import 'package:bike/views/login_view.dart';
 import 'package:bike/views/register_view.dart';
 import 'package:bike/views/verify_email_view.dart';
 import 'package:bike/views/homepage.dart'; // Create this file for HomePage
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // AuthService.firebase().initialize();
-  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  AuthService.firebase().initialize();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp());
 }
 
